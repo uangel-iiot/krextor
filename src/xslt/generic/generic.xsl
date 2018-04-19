@@ -1,34 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<!--
-    *  Copyright (C) 2008
-    *  Christoph Lange
-    *  KWARC, Jacobs University Bremen
-    *  http://kwarc.info/projects/krextor/
-    *
-    *   Krextor is free software; you can redistribute it and/or
-    * 	modify it under the terms of the GNU Lesser General Public
-    * 	License as published by the Free Software Foundation; either
-    * 	version 2 of the License, or (at your option) any later version.
-    *
-    * 	This program is distributed in the hope that it will be useful,
-    * 	but WITHOUT ANY WARRANTY; without even the implied warranty of
-    * 	MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
-    * 	Lesser General Public License for more details.
-    *
-    * 	You should have received a copy of the GNU Lesser General Public
-    * 	License along with this library; if not, write to the
-    * 	Free Software Foundation, Inc., 59 Temple Place - Suite 330,
-    * 	Boston, MA 02111-1307, USA.
-    * 
--->
-
 <!DOCTYPE stylesheet [
     <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+	<!ENTITY aml "http://iiot.skt.com/aml/">
 ]>
 
 <stylesheet xmlns="http://www.w3.org/1999/XSL/Transform" 
     xpath-default-namespace="http://www.w3.org/1999/XSL/Transform"
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
     xmlns:krextor="http://kwarc.info/projects/krextor"
     xmlns:xi="http://www.w3.org/2001/XInclude"
     xmlns:xs="http://www.w3.org/2001/XMLSchema"
@@ -144,6 +123,8 @@
 	<param name="object-type" as="xs:string" select="''"/>
 	<param name="object-language" as="xs:string?"/>
 	<param name="object-datatype" as="xs:string?"/>
+	<param name="empty-content" as="xs:boolean?"/>
+	<param name="reference-of-object" as="xs:anyURI?"/>
 
 	<param name="krextor:base-uri" as="xs:anyURI" tunnel="yes"/>
 
@@ -179,6 +160,8 @@
 	    <with-param name="object-type" select="$object-type"/>
 	    <with-param name="object-language" select="$object-language"/>
 	    <with-param name="object-datatype" select="$object-datatype"/>
+		<with-param name="empty-content" select="$empty-content"/>
+		<with-param name="reference-of-object" select="$reference-of-object"/>
 	</call-template>
     </template>
 
@@ -211,18 +194,18 @@
 	<param name="generated-uri" as="xs:anyURI"/>
 	<choose>
 	    <when test="$blank-node">
-		<call-template name="krextor:add-uri-property">
-		    <with-param name="property" select="$properties"/>
-		    <with-param name="inverse" select="$inverse"/>
-		    <with-param name="blank" select="$generated-blank-node-id"/>
-		</call-template>
+			<call-template name="krextor:add-uri-property">
+				<with-param name="property" select="$properties"/>
+				<with-param name="inverse" select="$inverse"/>
+				<with-param name="blank" select="$generated-blank-node-id"/>
+			</call-template>
 	    </when>
 	    <otherwise>
-		<call-template name="krextor:add-uri-property">
-		    <with-param name="property" select="$properties"/>
-		    <with-param name="inverse" select="$inverse"/>
-		    <with-param name="object" select="$generated-uri"/>
-		</call-template>
+			<call-template name="krextor:add-uri-property">
+				<with-param name="property" select="$properties"/>
+				<with-param name="inverse" select="$inverse"/>
+				<with-param name="object" select="$generated-uri"/>
+			</call-template>
 	    </otherwise>
 	</choose>
     </template>
@@ -396,25 +379,25 @@
 
     <xd:doc>Creates a resource from an element for which a mapping to an ontology class has been declared in the variable <code>krextor:resources</code>.</xd:doc>
     <template match="*" mode="krextor:create-resource">
-	<choose>
-	    <when test="not(empty($krextor:resources))">
-		<!-- variant without key: compare local-name and namespace-uri -->
-		<variable name="mapping" as="element()" select="key('krextor:resources',
-		    resolve-QName(name(), .),
-		    if (not(empty($krextor:resources)))
-		    then $krextor:resources
-		    else $krextor:dummy-node)"/>
-		<!-- we need this to trap the pre-computation of the key hashes -->
-		<call-template name="krextor:create-resource">
-		    <with-param name="type" select="tokenize($mapping/@type, '\s+')"/>
-		    <with-param name="related-via-properties" select="tokenize($mapping/@related-via-properties, '\s+')" tunnel="yes"/>
-		    <with-param name="related-via-inverse-properties" select="tokenize($mapping/@related-via-inverse-properties, '\s+')" tunnel="yes"/>
-		</call-template>
-	    </when>
-	    <otherwise>
-		<message terminate="yes">No mappings from XML elements to resources declared</message>
-	    </otherwise>
-	</choose>
+		<choose>
+			<when test="not(empty($krextor:resources))">
+			<!-- variant without key: compare local-name and namespace-uri -->
+			<variable name="mapping" as="element()" select="key('krextor:resources',
+				resolve-QName(name(), .),
+				if (not(empty($krextor:resources)))
+				then $krextor:resources
+				else $krextor:dummy-node)"/>
+			<!-- we need this to trap the pre-computation of the key hashes -->
+			<call-template name="krextor:create-resource">
+				<with-param name="type" select="tokenize($mapping/@type, '\s+')"/>
+				<with-param name="related-via-properties" select="tokenize($mapping/@related-via-properties, '\s+')" tunnel="yes"/>
+				<with-param name="related-via-inverse-properties" select="tokenize($mapping/@related-via-inverse-properties, '\s+')" tunnel="yes"/>
+			</call-template>
+			</when>
+			<otherwise>
+			<message terminate="yes">No mappings from XML elements to resources declared</message>
+			</otherwise>
+		</choose>
     </template>
 
     <xd:doc>
@@ -433,60 +416,64 @@
         </xd:detail>
     </xd:doc>
     <template name="krextor:add-literal-property">
-	<param name="subject-uri" as="xs:anyURI" tunnel="yes"/>
-	<param name="blank-node-id" as="xs:string?" tunnel="yes"/>
-	<param name="property" as="xs:string*"/>
-	<!-- property from incomplete triples -->
-	<param name="tunneled-property" as="xs:anyURI*" tunnel="yes"/>
-	<param name="object">
-	    <choose>
-                <when test="element()">
-                    <copy-of select="node()"/>
-                </when>
-		<otherwise>
-		    <value-of select="."/>
-		</otherwise>
-	    </choose>
-	</param>
-	<param name="object-is-list" select="false()" as="xs:boolean"/>
-	<param name="normalize-space" select="false()" as="xs:boolean"/>
-	<param name="language" as="xs:string?" select="''"/>
-	<param name="datatype" as="xs:string?"
-               select="if ($object/self::element() or krextor:is-single-element($object)) then '&rdf;XMLLiteral' else ''"/>
+		<param name="subject-uri" as="xs:anyURI" tunnel="yes"/>
+		<param name="blank-node-id" as="xs:string?" tunnel="yes"/>
+		<param name="property" as="xs:string*"/>
+		<!-- property from incomplete triples -->
+		<param name="tunneled-property" as="xs:anyURI*" tunnel="yes"/>
+		<param name="object">
+			<choose>
+					<when test="element()">
+						<copy-of select="node()"/>
+					</when>
+			<otherwise>
+				<value-of select="."/>
+			</otherwise>
+			</choose>
+		</param>
+		<param name="object-is-list" select="false()" as="xs:boolean"/>
+		<param name="normalize-space" select="false()" as="xs:boolean"/>
+		<param name="language" as="xs:string?" select="''"/>
+		<param name="datatype" as="xs:string?"
+				select="if ($object/self::element() or krextor:is-single-element($object)) then '&rdf;XMLLiteral' else ''"/>
+		<param name="empty-content" select="false()" as="xs:boolean"/>
+		<param name="reference-of-object" as="xs:anyURI?"/>
 
-	<variable name="actual-property" as="xs:anyURI+" select="if (exists($property))
-	    then for $p in $property return xs:anyURI($p)
-	    else $tunneled-property"/>
-	<choose>
-	    <!-- If the "object" is a whitespace-separated list or a sequence of actual objects, we recursively generate one triple for each object. -->
-	    <when test="$object-is-list">
-		<for-each select="if (count($object) gt 0) 
-		    then $object
-		    else tokenize($object, '\s+')">
-		    <call-template name="krextor:add-literal-property">
-			<with-param name="property" select="$actual-property"/>
-			<with-param name="object" select="."/>
-			<!-- Make sure that we don't run into an infinite loop ;-) -->
-			<with-param name="object-is-list" select="false()"/>
-		    </call-template>
-		</for-each>
-	    </when>
-	    <otherwise>
-		<for-each select="$actual-property">
-		    <call-template name="krextor:output-triple-impl">
-			<with-param name="subject" select="if ($blank-node-id) then $blank-node-id
-			    else $subject-uri"/>
-			<with-param name="subject-type" select="if ($blank-node-id) then 'blank'
-			    else 'uri'"/>
-			<with-param name="predicate" select="."/>
-			<with-param name="object" select="if ($normalize-space) then normalize-space($object)
-			    else krextor:normalize-if-single-element($object)"/>
-			<with-param name="object-language" select="$language"/>
-			<with-param name="object-datatype" select="$datatype"/>
-		    </call-template>
-		</for-each>
-	    </otherwise>
-	</choose>
+		<variable name="actual-property" as="xs:anyURI+" select="if (exists($property))
+			then for $p in $property return xs:anyURI($p)
+			else $tunneled-property"/>
+		<choose>
+			<!-- If the "object" is a whitespace-separated list or a sequence of actual objects, we recursively generate one triple for each object. -->
+			<when test="$object-is-list">
+			<for-each select="if (count($object) gt 0) 
+				then $object
+				else tokenize($object, '\s+')">
+				<call-template name="krextor:add-literal-property">
+				<with-param name="property" select="$actual-property"/>
+				<with-param name="object" select="."/>
+				<!-- Make sure that we don't run into an infinite loop ;-) -->
+				<with-param name="object-is-list" select="false()"/>
+				</call-template>
+			</for-each>
+			</when>
+			<otherwise>
+			<for-each select="$actual-property">
+				<call-template name="krextor:output-triple-impl">
+				<with-param name="subject" select="if ($blank-node-id) then $blank-node-id
+					else $subject-uri"/>
+				<with-param name="subject-type" select="if ($blank-node-id) then 'blank'
+					else 'uri'"/>
+				<with-param name="predicate" select="."/>
+				<with-param name="object" select="if ($normalize-space) then normalize-space($object)
+					else krextor:normalize-if-single-element($object)"/>
+				<with-param name="object-language" select="$language"/>
+				<with-param name="object-datatype" select="$datatype"/>
+				<with-param name="empty-content" select="$empty-content"/>
+				<with-param name="reference-of-object" select="$reference-of-object"/>
+				</call-template>
+			</for-each>
+			</otherwise>
+		</choose>
     </template>    
 
     <xd:doc>we hope that this slightly speeds up search</xd:doc>

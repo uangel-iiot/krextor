@@ -57,6 +57,7 @@
 	<param name="object-type"/>
 	<param name="object-language"/>
 	<param name="object-datatype"/>
+    <param name="reference-of-object"/>
 
 	<value-of select="TripleAdder:addTriple($triple-adder,
 	    $subject,
@@ -65,6 +66,7 @@
 	    $object,
 	    $object-type,
 	    $object-language,
-	    $object-datatype)"/>
+	    $object-datatype,
+        $reference-of-object)"/>
     </template>
 </stylesheet>

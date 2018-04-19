@@ -24,10 +24,23 @@
 -->
 
 <!DOCTYPE stylesheet [
+    <!ENTITY dc "http://purl.org/dc/elements/1.1/">
+    <!ENTITY owl "http://www.w3.org/2002/07/owl#">
     <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+    <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#">
+    <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#">
+    <!ENTITY aml "http://iiot.skt.com/aml/">
+    <!ENTITY schema "http://schema.org/">
 ]>
 
 <stylesheet xmlns="http://www.w3.org/1999/XSL/Transform" 
+xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+	xmlns:vi="http://www.openlinksw.com/virtuoso/xslt/"
+	xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+	xmlns:schema="http://schema.org/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:owl="http://www.w3.org/2002/07/owl#"
+	xmlns:aml="http://iiot.skt.com/aml/"
     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
     xmlns:xd="http://www.pnp-software.com/XSLTdoc"
     xmlns:krextor="http://kwarc.info/projects/krextor"
@@ -87,8 +100,11 @@
     <xd:doc>Generates namespace prefixes from all given URIs; returns a sequence of <code>krextor:namespace</code> elements.</xd:doc>
     <function name="krextor:generate-namespaces-from-uris" as="node()*">
 	<param name="uris" as="xs:string*"/>
+	<krextor:namespace prefix="rdfs" uri="&rdfs;"/>
 	<krextor:namespace prefix="rdf" uri="&rdf;"/>
-	<for-each-group select="$uris[not(starts-with(., '&rdf;'))]" group-by="krextor:split-prefix-localname(.)[1]">
+	<krextor:namespace prefix="aml" uri="&aml;"/>
+	<krextor:namespace prefix="dc" uri="&dc;"/>
+	<for-each-group select="$uris[not(starts-with(., '&rdf;')) and not(starts-with(., '&rdfs;')) and not(starts-with(., '&aml;')) and not(starts-with(., '&dc;'))]" group-by="krextor:split-prefix-localname(.)[1]">
 	    <krextor:namespace prefix="ns{position()}" uri="{current-grouping-key()}"/>
 	</for-each-group>
     </function>

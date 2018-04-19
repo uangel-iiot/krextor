@@ -1,0 +1,523 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+         xmlns:ns1="https://w3id.org/i40/aml/"
+         xmlns:ns2="http://purl.org/dc/elements/1.1/">
+   <ns1:CAEXFile rdf:about="https://w3id.org/i40/aml/CAEXFile1">
+      <ns1:hasFileName>updated_sample.aml</ns1:hasFileName>
+      <ns1:hasSchemaVersion>2.15</ns1:hasSchemaVersion>
+      <ns1:hasAdditionalInfomation rdf:resource="https://w3id.org/i40/aml/AdditionalInformation1"/>
+      <ns1:hasAdditionalInfomation rdf:resource="https://w3id.org/i40/aml/AdditionalInformation2"/>
+      <ns1:hasInstanceHierarchy rdf:resource="https://w3id.org/i40/aml/InstanceHierarchy1"/>
+      <ns1:hasInterfaceClassLib rdf:resource="https://w3id.org/i40/aml/InterfaceClassLib1"/>
+      <ns1:hasInterfaceClassLib rdf:resource="https://w3id.org/i40/aml/InterfaceClassLib2"/>
+      <ns1:hasRoleClassLib rdf:resource="https://w3id.org/i40/aml/RoleClassLib1"/>
+      <ns1:hasSystemUnitClassLib rdf:resource="https://w3id.org/i40/aml/SystemUnitClassLib1"/>
+   </ns1:CAEXFile>
+   <ns1:AdditionalInformation rdf:about="https://w3id.org/i40/aml/AdditionalInformation1">
+      <ns1:hasAutomationMLVersion rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2.0</ns1:hasAutomationMLVersion>
+   </ns1:AdditionalInformation>
+   <ns1:AdditionalInformation rdf:about="https://w3id.org/i40/aml/AdditionalInformation2">
+      <ns1:hasWriterName>ABB Demo Tool</ns1:hasWriterName>
+      <ns1:hasWriterID rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ABB Demo Tool</ns1:hasWriterID>
+      <ns1:hasWriterVendor rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ABB</ns1:hasWriterVendor>
+      <ns1:hasWriterVendorURL rdf:datatype="http://www.w3.org/2001/XMLSchema#string">www.ABB.com</ns1:hasWriterVendorURL>
+      <ns1:hasWriterVersion rdf:datatype="http://www.w3.org/2001/XMLSchema#string">1.0</ns1:hasWriterVersion>
+      <ns1:hasWriterRelease rdf:datatype="http://www.w3.org/2001/XMLSchema#string">1.0.0</ns1:hasWriterRelease>
+      <ns1:hasLastWritingDateTime rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">29.01.2012</ns1:hasLastWritingDateTime>
+      <ns1:hasWriterProjectTitle rdf:datatype="http://www.w3.org/2001/XMLSchema#string">no project</ns1:hasWriterProjectTitle>
+      <ns1:hasWriterProjectID rdf:datatype="http://www.w3.org/2001/XMLSchema#string">not project
+			</ns1:hasWriterProjectID>
+   </ns1:AdditionalInformation>
+   <ns1:InstanceHierarchy rdf:about="https://w3id.org/i40/aml/InstanceHierarchy1">
+      <ns1:hasAttributeName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">TestFile for Splitting</ns1:hasAttributeName>
+      <ns1:hasInternalElement rdf:resource="https://w3id.org/i40/aml/InternalElement1"/>
+      <ns1:hasInternalElement rdf:resource="https://w3id.org/i40/aml/InternalElement4"/>
+   </ns1:InstanceHierarchy>
+   <ns1:InternalElement rdf:about="https://w3id.org/i40/aml/InternalElement1">
+      <ns1:hasAttributeName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A</ns1:hasAttributeName>
+      <ns2:identifier rdf:datatype="http://www.w3.org/2001/XMLSchema#string">f9bceecd-d602-493b-a1ea-d6ae3018bbf5</ns2:identifier>
+      <ns1:RefBaseSystemUnitPath rdf:datatype="http://www.w3.org/2001/XMLSchema#string">MySUC/TA</ns1:RefBaseSystemUnitPath>
+      <ns1:hasAttribute rdf:resource="https://w3id.org/i40/aml/Attribute1"/>
+      <ns1:hasAttribute rdf:resource="https://w3id.org/i40/aml/Attribute2"/>
+      <ns1:hasExternalInterface rdf:resource="https://w3id.org/i40/aml/ExternalInterface1"/>
+      <ns1:hasExternalInterface rdf:resource="https://w3id.org/i40/aml/ExternalInterface2"/>
+      <ns1:hasExternalInterface rdf:resource="https://w3id.org/i40/aml/ExternalInterface3"/>
+      <ns1:hasExternalInterface rdf:resource="https://w3id.org/i40/aml/ExternalInterface4"/>
+      <ns1:hasExternalInterface rdf:resource="https://w3id.org/i40/aml/ExternalInterface5"/>
+      <ns1:hasInternalElement rdf:resource="https://w3id.org/i40/aml/InternalElement2"/>
+      <ns1:hasRoleRequirements rdf:resource="https://w3id.org/i40/aml/RoleRequirements3"/>
+   </ns1:InternalElement>
+   <ns1:Attribute rdf:about="https://w3id.org/i40/aml/Attribute1">
+      <ns1:hasAttributeName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Attr1</ns1:hasAttributeName>
+   </ns1:Attribute>
+   <ns1:Attribute rdf:about="https://w3id.org/i40/aml/Attribute2">
+      <ns1:hasAttributeName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Attr2</ns1:hasAttributeName>
+      <ns1:hasAttribute rdf:resource="https://w3id.org/i40/aml/Attribute3"/>
+   </ns1:Attribute>
+   <ns1:Attribute rdf:about="https://w3id.org/i40/aml/Attribute3"/>
+   <ns1:ExternalInterface rdf:about="https://w3id.org/i40/aml/ExternalInterface1">
+      <ns1:hasAttributeName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">newDocumentInterface</ns1:hasAttributeName>
+      <ns1:refBaseClassPath rdf:datatype="http://www.w3.org/2001/XMLSchema#string">AutomationMLInterfaceClassLib/AutomationMLBaseInterface/ExternalDataConnector/DocumentInterface</ns1:refBaseClassPath>
+      <ns2:identifier rdf:datatype="http://www.w3.org/2001/XMLSchema#string">8df3b948-4aaa-4d1e-9b72-d4cd387ed93b</ns2:identifier>
+      <ns1:hasAttribute rdf:resource="https://w3id.org/i40/aml/Attribute4"/>
+   </ns1:ExternalInterface>
+   <ns1:Attribute rdf:about="https://w3id.org/i40/aml/Attribute4">
+      <ns1:hasAttributeName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">refURI</ns1:hasAttributeName>
+   </ns1:Attribute>
+   <ns1:ExternalInterface rdf:about="https://w3id.org/i40/aml/ExternalInterface2">
+      <ns1:hasAttributeName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">newPLCopenXMLInterface</ns1:hasAttributeName>
+      <ns1:refBaseClassPath rdf:datatype="http://www.w3.org/2001/XMLSchema#string">AutomationMLInterfaceClassLib/AutomationMLBaseInterface/ExternalDataConnector/PLCopenXMLInterface</ns1:refBaseClassPath>
+      <ns2:identifier rdf:datatype="http://www.w3.org/2001/XMLSchema#string">31af323c-9619-4021-938b-f6913d88649e</ns2:identifier>
+      <ns1:hasAttribute rdf:resource="https://w3id.org/i40/aml/Attribute5"/>
+   </ns1:ExternalInterface>
+   <ns1:Attribute rdf:about="https://w3id.org/i40/aml/Attribute5">
+      <ns1:hasAttributeName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">refURI</ns1:hasAttributeName>
+   </ns1:Attribute>
+   <ns1:ExternalInterface rdf:about="https://w3id.org/i40/aml/ExternalInterface3">
+      <ns1:hasAttributeName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">newCOLLADAInterface</ns1:hasAttributeName>
+      <ns1:refBaseClassPath rdf:datatype="http://www.w3.org/2001/XMLSchema#string">AutomationMLInterfaceClassLib/AutomationMLBaseInterface/ExternalDataConnector/COLLADAInterface</ns1:refBaseClassPath>
+      <ns2:identifier rdf:datatype="http://www.w3.org/2001/XMLSchema#string">41f1aba5-b11f-4cdf-b551-71922fce4f91</ns2:identifier>
+      <ns1:hasAttribute rdf:resource="https://w3id.org/i40/aml/Attribute6"/>
+   </ns1:ExternalInterface>
+   <ns1:Attribute rdf:about="https://w3id.org/i40/aml/Attribute6">
+      <ns1:hasAttributeName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">refURI</ns1:hasAttributeName>
+   </ns1:Attribute>
+   <ns1:ExternalInterface rdf:about="https://w3id.org/i40/aml/ExternalInterface4">
+      <ns1:hasAttributeName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">newExternalDataConnector</ns1:hasAttributeName>
+      <ns1:refBaseClassPath rdf:datatype="http://www.w3.org/2001/XMLSchema#string">AutomationMLInterfaceClassLib/AutomationMLBaseInterface/ExternalDataConnector</ns1:refBaseClassPath>
+      <ns2:identifier rdf:datatype="http://www.w3.org/2001/XMLSchema#string">070a858b-d970-4fa8-8faa-146670dfbd95</ns2:identifier>
+      <ns1:hasAttribute rdf:resource="https://w3id.org/i40/aml/Attribute7"/>
+   </ns1:ExternalInterface>
+   <ns1:Attribute rdf:about="https://w3id.org/i40/aml/Attribute7">
+      <ns1:hasAttributeName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">refURI</ns1:hasAttributeName>
+   </ns1:Attribute>
+   <ns1:ExternalInterface rdf:about="https://w3id.org/i40/aml/ExternalInterface5">
+      <ns1:hasAttributeName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">newTI1</ns1:hasAttributeName>
+      <ns1:refBaseClassPath rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ICL/TI1</ns1:refBaseClassPath>
+      <ns2:identifier rdf:datatype="http://www.w3.org/2001/XMLSchema#string">1fe18227-1627-408c-a311-70dc9e23ffd7</ns2:identifier>
+      <ns1:hasAttribute rdf:resource="https://w3id.org/i40/aml/Attribute8"/>
+      <ns1:hasAttribute rdf:resource="https://w3id.org/i40/aml/Attribute9"/>
+   </ns1:ExternalInterface>
+   <ns1:Attribute rdf:about="https://w3id.org/i40/aml/Attribute8">
+      <ns1:hasAttributeName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Attr3</ns1:hasAttributeName>
+   </ns1:Attribute>
+   <ns1:Attribute rdf:about="https://w3id.org/i40/aml/Attribute9">
+      <ns1:hasAttributeName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Attr4</ns1:hasAttributeName>
+   </ns1:Attribute>
+   <ns1:InternalElement rdf:about="https://w3id.org/i40/aml/InternalElement2">
+      <ns1:hasAttributeName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">B</ns1:hasAttributeName>
+      <ns2:identifier rdf:datatype="http://www.w3.org/2001/XMLSchema#string">1cc21261-c47c-4f1b-b4e5-19d2bbffb0cc</ns2:identifier>
+      <ns1:RefBaseSystemUnitPath rdf:datatype="http://www.w3.org/2001/XMLSchema#string">MySUC/TB</ns1:RefBaseSystemUnitPath>
+      <ns1:hasAttribute rdf:resource="https://w3id.org/i40/aml/Attribute10"/>
+      <ns1:hasExternalInterface rdf:resource="https://w3id.org/i40/aml/ExternalInterface6"/>
+      <ns1:hasInternalElement rdf:resource="https://w3id.org/i40/aml/InternalElement3"/>
+      <ns1:hasRoleRequirements rdf:resource="https://w3id.org/i40/aml/RoleRequirements2"/>
+   </ns1:InternalElement>
+   <ns1:Attribute rdf:about="https://w3id.org/i40/aml/Attribute10">
+      <ns1:hasAttributeName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Durchmesser</ns1:hasAttributeName>
+   </ns1:Attribute>
+   <ns1:ExternalInterface rdf:about="https://w3id.org/i40/aml/ExternalInterface6">
+      <ns1:hasAttributeName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">newTI2</ns1:hasAttributeName>
+      <ns1:refBaseClassPath rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ICL/TI2</ns1:refBaseClassPath>
+      <ns2:identifier rdf:datatype="http://www.w3.org/2001/XMLSchema#string">778683bc-2bfd-454e-99dd-aeef62c94e16</ns2:identifier>
+   </ns1:ExternalInterface>
+   <ns1:InternalElement rdf:about="https://w3id.org/i40/aml/InternalElement3">
+      <ns1:hasAttributeName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">C</ns1:hasAttributeName>
+      <ns2:identifier rdf:datatype="http://www.w3.org/2001/XMLSchema#string">340836b6-24d7-4cf9-9fd4-7d0797688dd4</ns2:identifier>
+      <ns1:RefBaseSystemUnitPath rdf:datatype="http://www.w3.org/2001/XMLSchema#string">MySUC/TB/TC</ns1:RefBaseSystemUnitPath>
+      <ns1:hasExternalInterface rdf:resource="https://w3id.org/i40/aml/ExternalInterface7"/>
+      <ns1:hasRoleRequirements rdf:resource="https://w3id.org/i40/aml/RoleRequirements1"/>
+   </ns1:InternalElement>
+   <ns1:ExternalInterface rdf:about="https://w3id.org/i40/aml/ExternalInterface7">
+      <ns1:hasAttributeName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">newTI3</ns1:hasAttributeName>
+      <ns1:refBaseClassPath rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ICL/TI2/TI3</ns1:refBaseClassPath>
+      <ns2:identifier rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ab9d1d0c-5c5a-4305-8b6d-d10236f6ac4a</ns2:identifier>
+   </ns1:ExternalInterface>
+   <ns1:RoleRequirements rdf:about="https://w3id.org/i40/aml/RoleRequirements1">
+      <ns1:refBaseRoleClassPath rdf:datatype="http://www.w3.org/2001/XMLSchema#string">RCL/RB/RC</ns1:refBaseRoleClassPath>
+   </ns1:RoleRequirements>
+   <ns1:RoleRequirements rdf:about="https://w3id.org/i40/aml/RoleRequirements2">
+      <ns1:refBaseRoleClassPath rdf:datatype="http://www.w3.org/2001/XMLSchema#string">RCL/RB</ns1:refBaseRoleClassPath>
+   </ns1:RoleRequirements>
+   <ns1:RoleRequirements rdf:about="https://w3id.org/i40/aml/RoleRequirements3">
+      <ns1:refBaseRoleClassPath rdf:datatype="http://www.w3.org/2001/XMLSchema#string">RCL/RA</ns1:refBaseRoleClassPath>
+      <ns1:hasAttribute rdf:resource="https://w3id.org/i40/aml/Attribute11"/>
+      <ns1:hasAttribute rdf:resource="https://w3id.org/i40/aml/Attribute12"/>
+   </ns1:RoleRequirements>
+   <ns1:Attribute rdf:about="https://w3id.org/i40/aml/Attribute11"/>
+   <ns1:Attribute rdf:about="https://w3id.org/i40/aml/Attribute12"/>
+   <ns1:InternalElement rdf:about="https://w3id.org/i40/aml/InternalElement4">
+      <ns1:hasAttributeName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">D</ns1:hasAttributeName>
+      <ns2:identifier rdf:datatype="http://www.w3.org/2001/XMLSchema#string">5029c0de-66d2-42ee-be90-5af8262f9dbf</ns2:identifier>
+      <ns1:RefBaseSystemUnitPath rdf:datatype="http://www.w3.org/2001/XMLSchema#string">MySUC/TA</ns1:RefBaseSystemUnitPath>
+      <ns1:hasInternalElement rdf:resource="https://w3id.org/i40/aml/InternalElement5"/>
+      <ns1:hasRoleRequirements rdf:resource="https://w3id.org/i40/aml/RoleRequirements5"/>
+   </ns1:InternalElement>
+   <ns1:InternalElement rdf:about="https://w3id.org/i40/aml/InternalElement5">
+      <ns1:hasAttributeName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">E</ns1:hasAttributeName>
+      <ns2:identifier rdf:datatype="http://www.w3.org/2001/XMLSchema#string">eea4b308-73f7-4873-956a-74e7b244a8ea</ns2:identifier>
+      <ns1:RefBaseSystemUnitPath rdf:datatype="http://www.w3.org/2001/XMLSchema#string">MySUC/TB</ns1:RefBaseSystemUnitPath>
+      <ns1:hasInternalElement rdf:resource="https://w3id.org/i40/aml/InternalElement6"/>
+      <ns1:hasRoleRequirements rdf:resource="https://w3id.org/i40/aml/RoleRequirements4"/>
+   </ns1:InternalElement>
+   <ns1:InternalElement rdf:about="https://w3id.org/i40/aml/InternalElement6">
+      <ns1:hasAttributeName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">C</ns1:hasAttributeName>
+      <ns2:identifier rdf:datatype="http://www.w3.org/2001/XMLSchema#string">asdf</ns2:identifier>
+      <ns1:RefBaseSystemUnitPath rdf:datatype="http://www.w3.org/2001/XMLSchema#string">{340836b6-24d7-4cf9-9fd4-7d0797688dd4}</ns1:RefBaseSystemUnitPath>
+   </ns1:InternalElement>
+   <ns1:RoleRequirements rdf:about="https://w3id.org/i40/aml/RoleRequirements4">
+      <ns1:refBaseRoleClassPath rdf:datatype="http://www.w3.org/2001/XMLSchema#string">RCL/RB</ns1:refBaseRoleClassPath>
+   </ns1:RoleRequirements>
+   <ns1:RoleRequirements rdf:about="https://w3id.org/i40/aml/RoleRequirements5">
+      <ns1:refBaseRoleClassPath rdf:datatype="http://www.w3.org/2001/XMLSchema#string">RCL/RA</ns1:refBaseRoleClassPath>
+   </ns1:RoleRequirements>
+   <ns1:InterfaceClassLib rdf:about="https://w3id.org/i40/aml/InterfaceClassLib1">
+      <ns1:hasAttributeName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">AutomationMLInterfaceClassLib</ns1:hasAttributeName>
+      <ns1:hasInterfaceClass rdf:resource="https://w3id.org/i40/aml/InterfaceClass1"/>
+   </ns1:InterfaceClassLib>
+   <ns1:InterfaceClass rdf:about="https://w3id.org/i40/aml/InterfaceClass1">
+      <ns1:hasAttributeName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">AutomationMLBaseInterface</ns1:hasAttributeName>
+      <ns1:hasInterfaceClass rdf:resource="https://w3id.org/i40/aml/InterfaceClass2"/>
+      <ns1:hasInterfaceClass rdf:resource="https://w3id.org/i40/aml/InterfaceClass3"/>
+      <ns1:hasInterfaceClass rdf:resource="https://w3id.org/i40/aml/InterfaceClass4"/>
+      <ns1:hasInterfaceClass rdf:resource="https://w3id.org/i40/aml/InterfaceClass5"/>
+      <ns1:hasInterfaceClass rdf:resource="https://w3id.org/i40/aml/InterfaceClass6"/>
+      <ns1:hasInterfaceClass rdf:resource="https://w3id.org/i40/aml/InterfaceClass14"/>
+      <ns1:hasInterfaceClass rdf:resource="https://w3id.org/i40/aml/InterfaceClass24"/>
+      <ns1:hasInterfaceClass rdf:resource="https://w3id.org/i40/aml/InterfaceClass25"/>
+      <ns1:hasInterfaceClass rdf:resource="https://w3id.org/i40/aml/InterfaceClass26"/>
+      <ns1:hasInterfaceClass rdf:resource="https://w3id.org/i40/aml/InterfaceClass27"/>
+      <ns1:hasInterfaceClass rdf:resource="https://w3id.org/i40/aml/InterfaceClass28"/>
+   </ns1:InterfaceClass>
+   <ns1:InterfaceClass rdf:about="https://w3id.org/i40/aml/InterfaceClass2">
+      <ns1:hasAttributeName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Order</ns1:hasAttributeName>
+      <ns1:refBaseClassPath rdf:datatype="http://www.w3.org/2001/XMLSchema#string">AutomationMLBaseInterface</ns1:refBaseClassPath>
+      <ns1:hasAttribute rdf:resource="https://w3id.org/i40/aml/Attribute13"/>
+   </ns1:InterfaceClass>
+   <ns1:Attribute rdf:about="https://w3id.org/i40/aml/Attribute13">
+      <ns1:hasAttributeName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Direction</ns1:hasAttributeName>
+   </ns1:Attribute>
+   <ns1:InterfaceClass rdf:about="https://w3id.org/i40/aml/InterfaceClass3">
+      <ns1:hasAttributeName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PortConnector</ns1:hasAttributeName>
+      <ns1:refBaseClassPath rdf:datatype="http://www.w3.org/2001/XMLSchema#string">AutomationMLBaseInterface</ns1:refBaseClassPath>
+   </ns1:InterfaceClass>
+   <ns1:InterfaceClass rdf:about="https://w3id.org/i40/aml/InterfaceClass4">
+      <ns1:hasAttributeName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">InterlockingConnector</ns1:hasAttributeName>
+      <ns1:refBaseClassPath rdf:datatype="http://www.w3.org/2001/XMLSchema#string">AutomationMLBaseInterface</ns1:refBaseClassPath>
+   </ns1:InterfaceClass>
+   <ns1:InterfaceClass rdf:about="https://w3id.org/i40/aml/InterfaceClass5">
+      <ns1:hasAttributeName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PPRConnector</ns1:hasAttributeName>
+      <ns1:refBaseClassPath rdf:datatype="http://www.w3.org/2001/XMLSchema#string">AutomationMLBaseInterface</ns1:refBaseClassPath>
+   </ns1:InterfaceClass>
+   <ns1:InterfaceClass rdf:about="https://w3id.org/i40/aml/InterfaceClass6">
+      <ns1:hasAttributeName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ExternalDataConnector</ns1:hasAttributeName>
+      <ns1:refBaseClassPath rdf:datatype="http://www.w3.org/2001/XMLSchema#string">AutomationMLBaseInterface</ns1:refBaseClassPath>
+      <ns1:hasAttribute rdf:resource="https://w3id.org/i40/aml/Attribute14"/>
+      <ns1:hasInterfaceClass rdf:resource="https://w3id.org/i40/aml/InterfaceClass7"/>
+      <ns1:hasInterfaceClass rdf:resource="https://w3id.org/i40/aml/InterfaceClass10"/>
+      <ns1:hasInterfaceClass rdf:resource="https://w3id.org/i40/aml/InterfaceClass13"/>
+   </ns1:InterfaceClass>
+   <ns1:Attribute rdf:about="https://w3id.org/i40/aml/Attribute14">
+      <ns1:hasAttributeName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">refURI</ns1:hasAttributeName>
+   </ns1:Attribute>
+   <ns1:InterfaceClass rdf:about="https://w3id.org/i40/aml/InterfaceClass7">
+      <ns1:hasAttributeName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">COLLADAInterface</ns1:hasAttributeName>
+      <ns1:refBaseClassPath rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ExternalDataConnector</ns1:refBaseClassPath>
+      <ns1:hasAttribute rdf:resource="https://w3id.org/i40/aml/Attribute15"/>
+      <ns1:hasInterfaceClass rdf:resource="https://w3id.org/i40/aml/InterfaceClass8"/>
+      <ns1:hasInterfaceClass rdf:resource="https://w3id.org/i40/aml/InterfaceClass9"/>
+   </ns1:InterfaceClass>
+   <ns1:Attribute rdf:about="https://w3id.org/i40/aml/Attribute15">
+      <ns1:hasAttributeName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">refType</ns1:hasAttributeName>
+   </ns1:Attribute>
+   <ns1:InterfaceClass rdf:about="https://w3id.org/i40/aml/InterfaceClass8">
+      <ns1:hasAttributeName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">AttachmentPointInterface</ns1:hasAttributeName>
+      <ns1:refBaseClassPath rdf:datatype="http://www.w3.org/2001/XMLSchema#string">COLLADAInterface</ns1:refBaseClassPath>
+   </ns1:InterfaceClass>
+   <ns1:InterfaceClass rdf:about="https://w3id.org/i40/aml/InterfaceClass9">
+      <ns1:hasAttributeName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">RepresentationInterface</ns1:hasAttributeName>
+      <ns1:refBaseClassPath rdf:datatype="http://www.w3.org/2001/XMLSchema#string">COLLADAInterface</ns1:refBaseClassPath>
+   </ns1:InterfaceClass>
+   <ns1:InterfaceClass rdf:about="https://w3id.org/i40/aml/InterfaceClass10">
+      <ns1:hasAttributeName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PLCopenXMLInterface</ns1:hasAttributeName>
+      <ns1:refBaseClassPath rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ExternalDataConnector</ns1:refBaseClassPath>
+      <ns1:hasInterfaceClass rdf:resource="https://w3id.org/i40/aml/InterfaceClass11"/>
+      <ns1:hasInterfaceClass rdf:resource="https://w3id.org/i40/aml/InterfaceClass12"/>
+   </ns1:InterfaceClass>
+   <ns1:InterfaceClass rdf:about="https://w3id.org/i40/aml/InterfaceClass11">
+      <ns1:hasAttributeName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">LogicInterface</ns1:hasAttributeName>
+      <ns1:refBaseClassPath rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PLCopenXMLInterface</ns1:refBaseClassPath>
+   </ns1:InterfaceClass>
+   <ns1:InterfaceClass rdf:about="https://w3id.org/i40/aml/InterfaceClass12">
+      <ns1:hasAttributeName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">VariableInterface</ns1:hasAttributeName>
+      <ns1:refBaseClassPath rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PLCopenXMLInterface</ns1:refBaseClassPath>
+   </ns1:InterfaceClass>
+   <ns1:InterfaceClass rdf:about="https://w3id.org/i40/aml/InterfaceClass13">
+      <ns1:hasAttributeName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">DocumentInterface</ns1:hasAttributeName>
+      <ns1:refBaseClassPath rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ExternalDataConnector</ns1:refBaseClassPath>
+   </ns1:InterfaceClass>
+   <ns1:InterfaceClass rdf:about="https://w3id.org/i40/aml/InterfaceClass14">
+      <ns1:hasAttributeName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Communication</ns1:hasAttributeName>
+      <ns1:refBaseClassPath rdf:datatype="http://www.w3.org/2001/XMLSchema#string">AutomationMLBaseInterface</ns1:refBaseClassPath>
+      <ns1:hasInterfaceClass rdf:resource="https://w3id.org/i40/aml/InterfaceClass15"/>
+      <ns1:hasInterfaceClass rdf:resource="https://w3id.org/i40/aml/InterfaceClass23"/>
+   </ns1:InterfaceClass>
+   <ns1:InterfaceClass rdf:about="https://w3id.org/i40/aml/InterfaceClass15">
+      <ns1:hasAttributeName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">SignalInterface</ns1:hasAttributeName>
+      <ns1:refBaseClassPath rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Communication</ns1:refBaseClassPath>
+      <ns1:hasAttribute rdf:resource="https://w3id.org/i40/aml/Attribute16"/>
+      <ns1:hasAttribute rdf:resource="https://w3id.org/i40/aml/Attribute17"/>
+      <ns1:hasAttribute rdf:resource="https://w3id.org/i40/aml/Attribute18"/>
+      <ns1:hasAttribute rdf:resource="https://w3id.org/i40/aml/Attribute19"/>
+      <ns1:hasAttribute rdf:resource="https://w3id.org/i40/aml/Attribute20"/>
+      <ns1:hasInterfaceClass rdf:resource="https://w3id.org/i40/aml/InterfaceClass16"/>
+      <ns1:hasInterfaceClass rdf:resource="https://w3id.org/i40/aml/InterfaceClass18"/>
+      <ns1:hasInterfaceClass rdf:resource="https://w3id.org/i40/aml/InterfaceClass19"/>
+      <ns1:hasInterfaceClass rdf:resource="https://w3id.org/i40/aml/InterfaceClass20"/>
+      <ns1:hasInterfaceClass rdf:resource="https://w3id.org/i40/aml/InterfaceClass21"/>
+      <ns1:hasInterfaceClass rdf:resource="https://w3id.org/i40/aml/InterfaceClass22"/>
+   </ns1:InterfaceClass>
+   <ns1:Attribute rdf:about="https://w3id.org/i40/aml/Attribute16">
+      <ns1:hasAttributeName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Type</ns1:hasAttributeName>
+   </ns1:Attribute>
+   <ns1:Attribute rdf:about="https://w3id.org/i40/aml/Attribute17">
+      <ns1:hasAttributeName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Direction</ns1:hasAttributeName>
+   </ns1:Attribute>
+   <ns1:Attribute rdf:about="https://w3id.org/i40/aml/Attribute18">
+      <ns1:hasAttributeName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">BitCount</ns1:hasAttributeName>
+   </ns1:Attribute>
+   <ns1:Attribute rdf:about="https://w3id.org/i40/aml/Attribute19">
+      <ns1:hasAttributeName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Orientation</ns1:hasAttributeName>
+   </ns1:Attribute>
+   <ns1:Attribute rdf:about="https://w3id.org/i40/aml/Attribute20">
+      <ns1:hasAttributeName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Range</ns1:hasAttributeName>
+      <ns1:hasAttribute rdf:resource="https://w3id.org/i40/aml/Attribute21"/>
+      <ns1:hasAttribute rdf:resource="https://w3id.org/i40/aml/Attribute22"/>
+   </ns1:Attribute>
+   <ns1:Attribute rdf:about="https://w3id.org/i40/aml/Attribute21"/>
+   <ns1:Attribute rdf:about="https://w3id.org/i40/aml/Attribute22"/>
+   <ns1:InterfaceClass rdf:about="https://w3id.org/i40/aml/InterfaceClass16">
+      <ns1:hasAttributeName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">SignalSource</ns1:hasAttributeName>
+      <ns1:refBaseClassPath rdf:datatype="http://www.w3.org/2001/XMLSchema#string">SignalInterface</ns1:refBaseClassPath>
+      <ns1:hasInterfaceClass rdf:resource="https://w3id.org/i40/aml/InterfaceClass17"/>
+   </ns1:InterfaceClass>
+   <ns1:InterfaceClass rdf:about="https://w3id.org/i40/aml/InterfaceClass17">
+      <ns1:hasAttributeName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Switch</ns1:hasAttributeName>
+      <ns1:refBaseClassPath rdf:datatype="http://www.w3.org/2001/XMLSchema#string">SignalSource</ns1:refBaseClassPath>
+      <ns1:hasAttribute rdf:resource="https://w3id.org/i40/aml/Attribute23"/>
+      <ns1:hasAttribute rdf:resource="https://w3id.org/i40/aml/Attribute24"/>
+   </ns1:InterfaceClass>
+   <ns1:Attribute rdf:about="https://w3id.org/i40/aml/Attribute23">
+      <ns1:hasAttributeName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">LVAL</ns1:hasAttributeName>
+   </ns1:Attribute>
+   <ns1:Attribute rdf:about="https://w3id.org/i40/aml/Attribute24">
+      <ns1:hasAttributeName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">HYS</ns1:hasAttributeName>
+   </ns1:Attribute>
+   <ns1:InterfaceClass rdf:about="https://w3id.org/i40/aml/InterfaceClass18">
+      <ns1:hasAttributeName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">SignalSink</ns1:hasAttributeName>
+      <ns1:refBaseClassPath rdf:datatype="http://www.w3.org/2001/XMLSchema#string">SignalInterface</ns1:refBaseClassPath>
+   </ns1:InterfaceClass>
+   <ns1:InterfaceClass rdf:about="https://w3id.org/i40/aml/InterfaceClass19">
+      <ns1:hasAttributeName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">AlarmSource</ns1:hasAttributeName>
+      <ns1:refBaseClassPath rdf:datatype="http://www.w3.org/2001/XMLSchema#string">SignalInterface</ns1:refBaseClassPath>
+   </ns1:InterfaceClass>
+   <ns1:InterfaceClass rdf:about="https://w3id.org/i40/aml/InterfaceClass20">
+      <ns1:hasAttributeName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Physical_SignalInterface</ns1:hasAttributeName>
+      <ns1:refBaseClassPath rdf:datatype="http://www.w3.org/2001/XMLSchema#string">SignalInterface</ns1:refBaseClassPath>
+   </ns1:InterfaceClass>
+   <ns1:InterfaceClass rdf:about="https://w3id.org/i40/aml/InterfaceClass21">
+      <ns1:hasAttributeName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Logical_SignalInterface</ns1:hasAttributeName>
+      <ns1:refBaseClassPath rdf:datatype="http://www.w3.org/2001/XMLSchema#string">SignalInterface</ns1:refBaseClassPath>
+   </ns1:InterfaceClass>
+   <ns1:InterfaceClass rdf:about="https://w3id.org/i40/aml/InterfaceClass22">
+      <ns1:hasAttributeName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Human_Machine_SignalInterface</ns1:hasAttributeName>
+      <ns1:refBaseClassPath rdf:datatype="http://www.w3.org/2001/XMLSchema#string">SignalInterface</ns1:refBaseClassPath>
+   </ns1:InterfaceClass>
+   <ns1:InterfaceClass rdf:about="https://w3id.org/i40/aml/InterfaceClass23">
+      <ns1:hasAttributeName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">OPCTag</ns1:hasAttributeName>
+      <ns1:refBaseClassPath rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Communication</ns1:refBaseClassPath>
+      <ns1:hasAttribute rdf:resource="https://w3id.org/i40/aml/Attribute25"/>
+      <ns1:hasAttribute rdf:resource="https://w3id.org/i40/aml/Attribute26"/>
+      <ns1:hasAttribute rdf:resource="https://w3id.org/i40/aml/Attribute27"/>
+      <ns1:hasAttribute rdf:resource="https://w3id.org/i40/aml/Attribute28"/>
+      <ns1:hasAttribute rdf:resource="https://w3id.org/i40/aml/Attribute29"/>
+   </ns1:InterfaceClass>
+   <ns1:Attribute rdf:about="https://w3id.org/i40/aml/Attribute25">
+      <ns1:hasAttributeName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">TagName</ns1:hasAttributeName>
+   </ns1:Attribute>
+   <ns1:Attribute rdf:about="https://w3id.org/i40/aml/Attribute26">
+      <ns1:hasAttributeName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">DataType</ns1:hasAttributeName>
+   </ns1:Attribute>
+   <ns1:Attribute rdf:about="https://w3id.org/i40/aml/Attribute27">
+      <ns1:hasAttributeName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">OPCDataType</ns1:hasAttributeName>
+   </ns1:Attribute>
+   <ns1:Attribute rdf:about="https://w3id.org/i40/aml/Attribute28">
+      <ns1:hasAttributeName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">SignalPath</ns1:hasAttributeName>
+   </ns1:Attribute>
+   <ns1:Attribute rdf:about="https://w3id.org/i40/aml/Attribute29">
+      <ns1:hasAttributeName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">AccessRights</ns1:hasAttributeName>
+   </ns1:Attribute>
+   <ns1:InterfaceClass rdf:about="https://w3id.org/i40/aml/InterfaceClass24">
+      <ns1:hasAttributeName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Mechanical</ns1:hasAttributeName>
+      <ns1:refBaseClassPath rdf:datatype="http://www.w3.org/2001/XMLSchema#string">AutomationMLBaseInterface</ns1:refBaseClassPath>
+   </ns1:InterfaceClass>
+   <ns1:InterfaceClass rdf:about="https://w3id.org/i40/aml/InterfaceClass25">
+      <ns1:hasAttributeName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Electrical</ns1:hasAttributeName>
+      <ns1:refBaseClassPath rdf:datatype="http://www.w3.org/2001/XMLSchema#string">AutomationMLBaseInterface</ns1:refBaseClassPath>
+   </ns1:InterfaceClass>
+   <ns1:InterfaceClass rdf:about="https://w3id.org/i40/aml/InterfaceClass26">
+      <ns1:hasAttributeName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Pneumatical</ns1:hasAttributeName>
+      <ns1:refBaseClassPath rdf:datatype="http://www.w3.org/2001/XMLSchema#string">AutomationMLBaseInterface</ns1:refBaseClassPath>
+   </ns1:InterfaceClass>
+   <ns1:InterfaceClass rdf:about="https://w3id.org/i40/aml/InterfaceClass27">
+      <ns1:hasAttributeName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Hydraulical</ns1:hasAttributeName>
+      <ns1:refBaseClassPath rdf:datatype="http://www.w3.org/2001/XMLSchema#string">AutomationMLBaseInterface</ns1:refBaseClassPath>
+   </ns1:InterfaceClass>
+   <ns1:InterfaceClass rdf:about="https://w3id.org/i40/aml/InterfaceClass28">
+      <ns1:hasAttributeName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Logical</ns1:hasAttributeName>
+      <ns1:refBaseClassPath rdf:datatype="http://www.w3.org/2001/XMLSchema#string">AutomationMLBaseInterface</ns1:refBaseClassPath>
+      <ns1:hasInterfaceClass rdf:resource="https://w3id.org/i40/aml/InterfaceClass29"/>
+      <ns1:hasInterfaceClass rdf:resource="https://w3id.org/i40/aml/InterfaceClass30"/>
+   </ns1:InterfaceClass>
+   <ns1:InterfaceClass rdf:about="https://w3id.org/i40/aml/InterfaceClass29">
+      <ns1:hasAttributeName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Invocation</ns1:hasAttributeName>
+      <ns1:refBaseClassPath rdf:datatype="http://www.w3.org/2001/XMLSchema#string">AutomationMLInterfaceClassLib/AutomationMLBaseInterface/Logical</ns1:refBaseClassPath>
+      <ns1:hasAttribute rdf:resource="https://w3id.org/i40/aml/Attribute30"/>
+   </ns1:InterfaceClass>
+   <ns1:Attribute rdf:about="https://w3id.org/i40/aml/Attribute30">
+      <ns1:hasAttributeName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">invocation_parameter</ns1:hasAttributeName>
+   </ns1:Attribute>
+   <ns1:InterfaceClass rdf:about="https://w3id.org/i40/aml/InterfaceClass30">
+      <ns1:hasAttributeName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Human_Machine</ns1:hasAttributeName>
+      <ns1:refBaseClassPath rdf:datatype="http://www.w3.org/2001/XMLSchema#string">AutomationMLInterfaceClassLib/AutomationMLBaseInterface/Logical</ns1:refBaseClassPath>
+   </ns1:InterfaceClass>
+   <ns1:InterfaceClassLib rdf:about="https://w3id.org/i40/aml/InterfaceClassLib2">
+      <ns1:hasAttributeName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ICL</ns1:hasAttributeName>
+      <ns1:hasInterfaceClass rdf:resource="https://w3id.org/i40/aml/InterfaceClass31"/>
+      <ns1:hasInterfaceClass rdf:resource="https://w3id.org/i40/aml/InterfaceClass32"/>
+   </ns1:InterfaceClassLib>
+   <ns1:InterfaceClass rdf:about="https://w3id.org/i40/aml/InterfaceClass31">
+      <ns1:hasAttributeName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">TI1</ns1:hasAttributeName>
+      <ns1:hasAttribute rdf:resource="https://w3id.org/i40/aml/Attribute31"/>
+      <ns1:hasAttribute rdf:resource="https://w3id.org/i40/aml/Attribute32"/>
+   </ns1:InterfaceClass>
+   <ns1:Attribute rdf:about="https://w3id.org/i40/aml/Attribute31">
+      <ns1:hasAttributeName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Attr7</ns1:hasAttributeName>
+      <ns1:hasAttributeValue rdf:datatype="http://www.w3.org/2001/XMLSchema#string">12</ns1:hasAttributeValue>
+   </ns1:Attribute>
+   <ns1:Attribute rdf:about="https://w3id.org/i40/aml/Attribute32">
+      <ns1:hasAttributeName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Attr8</ns1:hasAttributeName>
+      <ns1:hasAttributeValue rdf:datatype="http://www.w3.org/2001/XMLSchema#string">12</ns1:hasAttributeValue>
+   </ns1:Attribute>
+   <ns1:InterfaceClass rdf:about="https://w3id.org/i40/aml/InterfaceClass32">
+      <ns1:hasAttributeName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">TI2</ns1:hasAttributeName>
+      <ns1:hasAttribute rdf:resource="https://w3id.org/i40/aml/Attribute33"/>
+      <ns1:hasAttribute rdf:resource="https://w3id.org/i40/aml/Attribute34"/>
+      <ns1:hasInterfaceClass rdf:resource="https://w3id.org/i40/aml/InterfaceClass33"/>
+   </ns1:InterfaceClass>
+   <ns1:Attribute rdf:about="https://w3id.org/i40/aml/Attribute33">
+      <ns1:hasAttributeName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Attr9</ns1:hasAttributeName>
+      <ns1:hasAttributeValue rdf:datatype="http://www.w3.org/2001/XMLSchema#string">12</ns1:hasAttributeValue>
+   </ns1:Attribute>
+   <ns1:Attribute rdf:about="https://w3id.org/i40/aml/Attribute34">
+      <ns1:hasAttributeName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Attr10</ns1:hasAttributeName>
+      <ns1:hasAttributeValue rdf:datatype="http://www.w3.org/2001/XMLSchema#string">12</ns1:hasAttributeValue>
+   </ns1:Attribute>
+   <ns1:InterfaceClass rdf:about="https://w3id.org/i40/aml/InterfaceClass33">
+      <ns1:hasAttributeName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">TI3</ns1:hasAttributeName>
+      <ns1:hasAttribute rdf:resource="https://w3id.org/i40/aml/Attribute35"/>
+      <ns1:hasAttribute rdf:resource="https://w3id.org/i40/aml/Attribute36"/>
+   </ns1:InterfaceClass>
+   <ns1:Attribute rdf:about="https://w3id.org/i40/aml/Attribute35">
+      <ns1:hasAttributeName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Attr11</ns1:hasAttributeName>
+      <ns1:hasAttributeValue rdf:datatype="http://www.w3.org/2001/XMLSchema#string">12</ns1:hasAttributeValue>
+   </ns1:Attribute>
+   <ns1:Attribute rdf:about="https://w3id.org/i40/aml/Attribute36">
+      <ns1:hasAttributeName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Attr12</ns1:hasAttributeName>
+      <ns1:hasAttributeValue rdf:datatype="http://www.w3.org/2001/XMLSchema#string">12</ns1:hasAttributeValue>
+   </ns1:Attribute>
+   <ns1:RoleClassLib rdf:about="https://w3id.org/i40/aml/RoleClassLib1">
+      <ns1:hasAttributeName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">RCL</ns1:hasAttributeName>
+      <ns1:hasRoleClass rdf:resource="https://w3id.org/i40/aml/RoleClass1"/>
+      <ns1:hasRoleClass rdf:resource="https://w3id.org/i40/aml/RoleClass1"/>
+      <ns1:hasRoleClass rdf:resource="https://w3id.org/i40/aml/RoleClass2"/>
+      <ns1:hasRoleClass rdf:resource="https://w3id.org/i40/aml/RoleClass2"/>
+   </ns1:RoleClassLib>
+   <ns1:RoleClass rdf:about="https://w3id.org/i40/aml/RoleClass1">
+      <ns1:hasAttributeName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">RA</ns1:hasAttributeName>
+      <ns1:hasAttribute rdf:resource="https://w3id.org/i40/aml/Attribute37"/>
+      <ns1:hasAttribute rdf:resource="https://w3id.org/i40/aml/Attribute38"/>
+   </ns1:RoleClass>
+   <ns1:Attribute rdf:about="https://w3id.org/i40/aml/Attribute37">
+      <ns1:hasAttributeName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Attr13</ns1:hasAttributeName>
+      <ns1:hasAttributeValue rdf:datatype="http://www.w3.org/2001/XMLSchema#string">12</ns1:hasAttributeValue>
+   </ns1:Attribute>
+   <ns1:Attribute rdf:about="https://w3id.org/i40/aml/Attribute38">
+      <ns1:hasAttributeName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Attr14</ns1:hasAttributeName>
+      <ns1:hasAttributeValue rdf:datatype="http://www.w3.org/2001/XMLSchema#string">12</ns1:hasAttributeValue>
+   </ns1:Attribute>
+   <ns1:RoleClass rdf:about="https://w3id.org/i40/aml/RoleClass2">
+      <ns1:hasAttributeName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">RB</ns1:hasAttributeName>
+      <ns1:hasAttribute rdf:resource="https://w3id.org/i40/aml/Attribute39"/>
+      <ns1:hasAttribute rdf:resource="https://w3id.org/i40/aml/Attribute40"/>
+      <ns1:hasRoleClass rdf:resource="https://w3id.org/i40/aml/RoleClass3"/>
+      <ns1:hasRoleClass rdf:resource="https://w3id.org/i40/aml/RoleClass3"/>
+   </ns1:RoleClass>
+   <ns1:Attribute rdf:about="https://w3id.org/i40/aml/Attribute39">
+      <ns1:hasAttributeName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Attr15</ns1:hasAttributeName>
+      <ns1:hasAttributeValue rdf:datatype="http://www.w3.org/2001/XMLSchema#string">12</ns1:hasAttributeValue>
+   </ns1:Attribute>
+   <ns1:Attribute rdf:about="https://w3id.org/i40/aml/Attribute40">
+      <ns1:hasAttributeName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Attr16</ns1:hasAttributeName>
+      <ns1:hasAttributeValue rdf:datatype="http://www.w3.org/2001/XMLSchema#string">12</ns1:hasAttributeValue>
+   </ns1:Attribute>
+   <ns1:RoleClass rdf:about="https://w3id.org/i40/aml/RoleClass3">
+      <ns1:hasAttributeName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">RC</ns1:hasAttributeName>
+      <ns1:refBaseClassPath rdf:datatype="http://www.w3.org/2001/XMLSchema#string">RB</ns1:refBaseClassPath>
+   </ns1:RoleClass>
+   <ns1:SystemUnitClassLib rdf:about="https://w3id.org/i40/aml/SystemUnitClassLib1">
+      <ns1:hasAttributeName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">MySUC</ns1:hasAttributeName>
+      <ns1:hasSystemUnitClass rdf:resource="https://w3id.org/i40/aml/SystemUnitClass1"/>
+      <ns1:hasSystemUnitClass rdf:resource="https://w3id.org/i40/aml/SystemUnitClass2"/>
+   </ns1:SystemUnitClassLib>
+   <ns1:SystemUnitClass rdf:about="https://w3id.org/i40/aml/SystemUnitClass1">
+      <ns1:hasAttributeName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">TA</ns1:hasAttributeName>
+      <ns1:hasAttribute rdf:resource="https://w3id.org/i40/aml/Attribute41"/>
+      <ns1:hasAttribute rdf:resource="https://w3id.org/i40/aml/Attribute42"/>
+   </ns1:SystemUnitClass>
+   <ns1:Attribute rdf:about="https://w3id.org/i40/aml/Attribute41">
+      <ns1:hasAttributeName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Attr17</ns1:hasAttributeName>
+      <ns1:hasAttributeValue rdf:datatype="http://www.w3.org/2001/XMLSchema#string">12</ns1:hasAttributeValue>
+   </ns1:Attribute>
+   <ns1:Attribute rdf:about="https://w3id.org/i40/aml/Attribute42">
+      <ns1:hasAttributeName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Attr18</ns1:hasAttributeName>
+      <ns1:hasAttributeValue rdf:datatype="http://www.w3.org/2001/XMLSchema#string">12</ns1:hasAttributeValue>
+   </ns1:Attribute>
+   <ns1:SystemUnitClass rdf:about="https://w3id.org/i40/aml/SystemUnitClass2">
+      <ns1:hasAttributeName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">TB</ns1:hasAttributeName>
+      <ns1:hasAttribute rdf:resource="https://w3id.org/i40/aml/Attribute43"/>
+      <ns1:hasAttribute rdf:resource="https://w3id.org/i40/aml/Attribute44"/>
+      <ns1:hasSystemUnitClass rdf:resource="https://w3id.org/i40/aml/SystemUnitClass3"/>
+   </ns1:SystemUnitClass>
+   <ns1:Attribute rdf:about="https://w3id.org/i40/aml/Attribute43">
+      <ns1:hasAttributeName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Attr19</ns1:hasAttributeName>
+      <ns1:hasAttributeValue rdf:datatype="http://www.w3.org/2001/XMLSchema#string">12</ns1:hasAttributeValue>
+   </ns1:Attribute>
+   <ns1:Attribute rdf:about="https://w3id.org/i40/aml/Attribute44">
+      <ns1:hasAttributeName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Attr20</ns1:hasAttributeName>
+      <ns1:hasAttributeValue rdf:datatype="http://www.w3.org/2001/XMLSchema#string">12</ns1:hasAttributeValue>
+   </ns1:Attribute>
+   <ns1:SystemUnitClass rdf:about="https://w3id.org/i40/aml/SystemUnitClass3">
+      <ns1:hasAttributeName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">TC</ns1:hasAttributeName>
+      <ns1:hasAttribute rdf:resource="https://w3id.org/i40/aml/Attribute45"/>
+      <ns1:hasAttribute rdf:resource="https://w3id.org/i40/aml/Attribute46"/>
+   </ns1:SystemUnitClass>
+   <ns1:Attribute rdf:about="https://w3id.org/i40/aml/Attribute45">
+      <ns1:hasAttributeName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Attr21</ns1:hasAttributeName>
+      <ns1:hasAttributeValue rdf:datatype="http://www.w3.org/2001/XMLSchema#string">12</ns1:hasAttributeValue>
+   </ns1:Attribute>
+   <ns1:Attribute rdf:about="https://w3id.org/i40/aml/Attribute46">
+      <ns1:hasAttributeName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Attr22</ns1:hasAttributeName>
+      <ns1:hasAttributeValue rdf:datatype="http://www.w3.org/2001/XMLSchema#string">12</ns1:hasAttributeValue>
+   </ns1:Attribute>
+</rdf:RDF>

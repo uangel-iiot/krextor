@@ -61,6 +61,8 @@
 	<xsl:param name="object-language" as="xs:string?"/>
 	<!-- datatype of the (literal) object -->
 	<xsl:param name="object-datatype" as="xs:string?"/>
+    
+    <xsl:param name="reference-of-object" as="xs:anyURI?"/>
 
 	<!-- output the triple -->
     </xsl:template>

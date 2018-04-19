@@ -3,10 +3,13 @@
 <!DOCTYPE stylesheet [
     <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#">
 	<!ENTITY aml "http://iiot.skt.com/aml/">
+    <!ENTITY owl "http://www.w3.org/2002/07/owl#">
+    <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#">
 ]>
 
 <stylesheet xmlns="http://www.w3.org/1999/XSL/Transform" 
     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+	xmlns:rdfs="&rdfs;"
     xmlns:xd="http://www.pnp-software.com/XSLTdoc"
     xmlns:rxr="http://ilrt.org/discovery/2004/03/rxr/"
     xmlns:krextor="http://kwarc.info/projects/krextor"
@@ -86,13 +89,63 @@
 	    <!-- output generated namespace prefixes -->
 	    <apply-templates select="$namespaces" mode="krextor:xmlns"/>
 
+        <rdf:Description rdf:about="&aml;class">
+				<rdf:type rdf:resource="&owl;ObjectProperty"/>
+			</rdf:Description>
+			<rdf:Description rdf:about="&aml;refBaseSystemUnitClass">
+				<rdf:type rdf:resource="&aml;ObjectProperty"/>
+				<rdfs:subPropertyOf rdf:resource="&aml;class"/>
+			</rdf:Description>
+			<rdf:Description rdf:about="&aml;refBaseClass">
+				<rdf:type rdf:resource="&aml;ObjectProperty"/>
+				<rdfs:subPropertyOf rdf:resource="&aml;class"/>
+			</rdf:Description>
+			<rdf:Description rdf:about="&aml;refBaseRoleClass">
+				<rdf:type rdf:resource="&aml;ObjectProperty"/>
+				<rdfs:subPropertyOf rdf:resource="&aml;class"/>
+			</rdf:Description>
+
+			<rdf:Description rdf:about="&aml;hasRole">
+				<rdf:type rdf:resource="&owl;ObjectProperty"/>
+			</rdf:Description>
+			<rdf:Description rdf:about="&aml;hasRoleRequirements">
+				<rdf:type rdf:resource="&aml;ObjectProperty"/>
+				<rdfs:subPropertyOf rdf:resource="&aml;hasRole"/>
+			</rdf:Description>
+			<rdf:Description rdf:about="&aml;hasSupportedRoleClass">
+				<rdf:type rdf:resource="&aml;ObjectProperty"/>
+				<rdfs:subPropertyOf rdf:resource="&aml;hasRole"/>
+			</rdf:Description>
+
+			<rdf:Description rdf:about="&aml;hasRoleClassPath">
+				<rdf:type rdf:resource="&owl;ObjectProperty"/>
+			</rdf:Description>
+			<rdf:Description rdf:about="&aml;hasRoleRequirements">
+				<rdf:type rdf:resource="&aml;ObjectProperty"/>
+				<rdfs:subPropertyOf rdf:resource="&aml;hasRoleClassPath"/>
+			</rdf:Description>
+			<rdf:Description rdf:about="&aml;hasSupportedRoleClass">
+				<rdf:type rdf:resource="&aml;ObjectProperty"/>
+				<rdfs:subPropertyOf rdf:resource="&aml;hasRoleClassPath"/>
+			</rdf:Description>
+
             <for-each-group select="$rxr/rxr:graph/rxr:triple" group-by="(rxr:subject/@blank|rxr:subject/@uri)[1]">
 		<!-- if the subject has types, convert the first one into a QName, otherwise use rdf:Description -->
 		<variable name="type-triple" select="current-group()[rxr:predicate/@uri eq '&rdf;type'][rxr:object/@uri][1]"/>
 		<variable name="type-qname" as="xs:string*">
 		    <choose>
 			<when test="$type-triple">
-			    <sequence select="('&rdf;', 'rdf', 'Description')"/>
+                <choose>
+                    <when test="contains(current-grouping-key(), 'SystemUnitClass')">
+			            <sequence select="('&aml;', 'aml', 'SystemUnitClass')"/>
+                    </when>
+                    <when test="contains(current-grouping-key(), 'InterfaceClass')">
+			            <sequence select="('&aml;', 'aml', 'InterfaceClass')"/>
+                    </when>
+                    <when test="contains(current-grouping-key(), 'RoleClass')">
+			            <sequence select="('&aml;', 'aml', 'RoleClass')"/>
+                    </when>
+                </choose>
 			    <!--<sequence select="krextor:uri-to-qname($type-triple/rxr:object/@uri, $namespaces)"/>-->
 			</when>
 			<otherwise>
@@ -101,7 +154,7 @@
 		    </choose>
 		</variable>
 		<variable name="remaining-triples" select="current-group() except ($type-triple)"/>
-		
+
 		<!-- output an element representing the subject and its type -->
 		<element name="{$type-qname[2]}:{$type-qname[3]}" namespace="{$type-qname[1]}">
 		    <choose>
@@ -112,45 +165,6 @@
 					<attribute name="rdf:about" select="current-grouping-key()"/>
 				</when>
 		    </choose>
-			
-			<element name="rdf:type">
-				<choose>
-					<when test="contains(current-grouping-key(), '-')">
-						<!--http://iiot.skt.com/aml/updated_sample.aml/CAEXFile1-updated_sample.aml-->
-						<variable name="temp_str" select="substring-before(current-grouping-key(), '-')"/>
-						<!--http://iiot.skt.com/aml/updated_sample.aml/CAEXFile1-->
-						<variable name="s-tokenized" select="tokenize($temp_str, '/')"/>
-						<!--(http:, , iiot.skt.com, aml, updated_sample.aml, CAEXFile1)-->
- 						<variable name="temp_str2" select="string-join(remove(remove($s-tokenized, count($s-tokenized)), count($s-tokenized) - 1), '/')"/>
-						<!--http://iiot.skt.com/aml/-->
-						<variable name="temp_str3">
-							<if test="substring($temp_str, string-length($temp_str)) != '/'">
-							<!--1 != '/'-->
-								<value-of select="tokenize($temp_str, '/')[last()]" />
-								<!--CAEXFile1-->
-							</if>
-						</variable>
-						<attribute name="rdf:resource" select="concat($temp_str2, '/', replace($temp_str3, '([0-9]+)', ''))"/>
-						<!--http://iiot.skt.com/aml/CAEXFile-->
-					</when>
-					<otherwise>
-						<!--http://iiot.skt.com/aml/updated_sample.aml/RoleRequirements1-->
-						<variable name="s-tokenized" select="tokenize(current-grouping-key(), '/')"/>
-						<!--(http:, , iiot.skt.com, aml, updated_sample.aml, RoleRequirements1)-->
-						<variable name="temp_str" select="string-join(remove(remove($s-tokenized, count($s-tokenized)), count($s-tokenized) - 1), '/')"/>
-						<!--http://iiot.skt.com/aml-->
-						<variable name="temp_str2" select="replace(tokenize(current-grouping-key(), '/')[last()], '([0-9]+)', '')"/>
-						<!--RoleRequirements-->
-						<attribute name="rdf:resource" select="concat($temp_str, '/', $temp_str2)"/>
-						<!--http://iiot.skt.com/aml/updated_sample.aml/RoleRequirements-->
-					</otherwise>
-				</choose>
-			</element>
-
-			<!--<element name="aml:root">
-				<attribute name="rdf:resource" select="current-grouping-key()"/>
-			</element>-->
-			
 		    <apply-templates select="$remaining-triples" mode="krextor:rxr">
 			<with-param name="namespaces" select="$namespaces"/>
 		    </apply-templates>

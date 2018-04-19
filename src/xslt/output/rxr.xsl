@@ -1,33 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<!--
-    *  Copyright (C) 2008
-    *  Christoph Lange
-    *  KWARC, Jacobs University Bremen
-    *  http://kwarc.info/projects/krextor/
-    *
-    *   Krextor is free software; you can redistribute it and/or
-    * 	modify it under the terms of the GNU Lesser General Public
-    * 	License as published by the Free Software Foundation; either
-    * 	version 2 of the License, or (at your option) any later version.
-    *
-    * 	This program is distributed in the hope that it will be useful,
-    * 	but WITHOUT ANY WARRANTY; without even the implied warranty of
-    * 	MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
-    * 	Lesser General Public License for more details.
-    *
-    * 	You should have received a copy of the GNU Lesser General Public
-    * 	License along with this library; if not, write to the
-    * 	Free Software Foundation, Inc., 59 Temple Place - Suite 330,
-    * 	Boston, MA 02111-1307, USA.
-    * 
--->
-
 <!DOCTYPE stylesheet [
     <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#">
 ]>
 
 <stylesheet xmlns="http://www.w3.org/1999/XSL/Transform" 
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
     xmlns:xd="http://www.pnp-software.com/XSLTdoc"
     xmlns:rxr="http://ilrt.org/discovery/2004/03/rxr/"
     xmlns:krextor="http://kwarc.info/projects/krextor"
@@ -75,6 +53,9 @@
 	<param name="object-language"/>
 	<param name="object-datatype"/>
 
+	<param name="reference-of-object"/>
+	<param name="empty-content"/>
+
 	<rxr:triple>
 	    <rxr:subject>
 		<attribute name="{$subject-type}" select="$subject"/>
@@ -83,6 +64,9 @@
 	    <rxr:object>
 		<if test="$object-language">
 		    <attribute name="xml:lang" select="$object-language"/>
+		    </if>
+		<if test="$reference-of-object">
+			<attribute name="uri" select="$reference-of-object"/>
 		</if>
 		<choose>
 		    <when test="$object-type">
@@ -93,14 +77,16 @@
 			<if test="$object-datatype">
 			    <attribute name="datatype" select="$object-datatype"/>
 			</if>
-			<choose>
-			    <when test="$object-datatype eq '&rdf;XMLLiteral'">
-				<copy-of select="$object"/>
-			    </when>
-			    <otherwise>
-				<value-of select="$object"/>
-			    </otherwise>
-			</choose>
+			<if test="$empty-content=false()">
+				<choose>
+					<when test="$object-datatype eq '&rdf;XMLLiteral'">
+						<copy-of select="$object"/>
+					</when>
+					<otherwise>
+						<value-of select="$object"/>
+					</otherwise>
+				</choose>
+			</if>
 		    </otherwise>
 		</choose>
 	    </rxr:object>
